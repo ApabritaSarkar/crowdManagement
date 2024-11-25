@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import AddOfficer from './components/AddOfficer';
-import OfficerList from './components/OfficerList';
-import OfficerLogin from './components/OfficerLogin';
-import { getOfficers } from './api/officerService';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import AddOfficer from "./components/AddOfficer";
+import OfficerList from "./components/OfficerList";
+import OfficerLogin from "./components/OfficerLogin";
+import ReportDiary from "./components/ReportDiary";
+import Dashboard from "./components/Dashboard";
+import { getOfficers } from "./api/officerService";
 
 const App = () => {
   const [officers, setOfficers] = useState([]);
@@ -13,7 +16,7 @@ const App = () => {
       const response = await getOfficers();
       setOfficers(response.data);
     } catch (error) {
-      console.error('Error fetching officers:', error);
+      console.error("Error fetching officers:", error);
     }
   };
 
@@ -23,38 +26,23 @@ const App = () => {
 
   return (
     <Router>
-      <div>
-        {/* Navigation Links */}
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Admin Dashboard</Link>
-            </li>
-            <li>
-              <Link to="/officer-login">Officer Login</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* Routes */}
-        <Routes>
-          {/* Admin Dashboard */}
-          <Route
-            path="/"
-            element={
-              <div>
-                <h1>Admin Dashboard</h1>
-                <AddOfficer refreshOfficers={fetchOfficers} />
-                <h2>All Officers</h2>
-                <OfficerList officers={officers} />
-              </div>
-            }
-          />
-          
-          {/* Officer Login */}
-          <Route path="/officer-login" element={<OfficerLogin />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/admin-dashboard"
+          element={
+            <div>
+              <h1>Admin Dashboard</h1>
+              <AddOfficer refreshOfficers={fetchOfficers} />
+              <h2>All Officers</h2>
+              <OfficerList officers={officers} />
+            </div>
+          }
+        />
+        <Route path="/officer-login" element={<OfficerLogin />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/report-diary" element={<ReportDiary />} />
+      </Routes>
     </Router>
   );
 };

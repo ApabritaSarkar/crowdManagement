@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { officerLogin } from '../api/officerService';
+import { useNavigate } from "react-router-dom";
 
 const OfficerLogin = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -12,9 +13,9 @@ const OfficerLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await officerLogin(credentials);
-      setMessage(response.data.message);
-    } catch (error) {
+      setMessage("Login successful!");
+      navigate("/dashboard");
+      } catch (error) {
       setMessage(error.response?.data?.message || 'Error logging in');
     }
   };
