@@ -1,197 +1,104 @@
-*
-{
+
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-.content {
-  flex: 1;
-  overflow-y: auto;
-}
-
-
-.cctv-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.cctv-footage {
-  position: relative;
-  border: 2px solid #444;
-  border-radius: 8px;
-  background-color: #29293d;
-  overflow: hidden;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-
-.cctv-footage:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-}
-
-
-.cctv-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  overflow-x: hidden; 
 }
-
-
-.cctv-label {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  padding: 5px 12px;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
-  pointer-events: none;
-}
-
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-}
-
 
 .dashboard {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  height: 100vh; 
+  width: 100%; 
+  background-color: #f4f4f4; 
+}
+
+
+.sidebar {
+  width: 250px; 
+  height: 100vh; 
+  background-color: #1f1f33; 
+  color: #d1d1e0; 
+  position: fixed; 
+  left: 0;
+  top: 0;
+  z-index: 10; 
   padding: 20px;
-  background-color: #ffffff;
-  min-height: 100vh;
+  box-sizing: border-box; 
+  overflow-y: auto; 
+  border-right: 1px solid #333; 
 }
 
 
-.user-details {
-  background-color: #1e1e2f;
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.user-details h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.user-details p {
-  font-size: 1rem;
-}
-
-
-.notifications {
-  background-color: #f9f9f9;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.notifications h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.notifications ul {
-  list-style: none;
-  padding: 0;
-}
-
-.notifications ul li {
-  background-color: #fff;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.bodyof3 {
+  flex: 1; 
+  margin-left: 250px; 
+  padding: 20px;
+  overflow-y: auto; 
+  background-color: #eef2f3; 
+  box-sizing: border-box; 
 }
 
 
 .cctv-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+  gap: 20px; 
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
+
 .cctv-footage {
+  display: flex;
+  
   position: relative;
-  border: 2px solid #ddd;
+  background: #000; 
   border-radius: 8px;
-  background-color: #000;
   overflow: hidden;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.2s, box-shadow 0.2s; 
 }
 
 .cctv-footage:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
+/* Video Element */
 .cctv-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 100%; 
+  height: auto;
+  border-radius: 8px 8px 0 0; 
 }
 
+/* CCTV Label */
 .cctv-label {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  padding: 5px 12px;
-  color: white;
+  bottom: 10px; 
+  left: 10px; 
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff; 
+  padding: 5px 10px;
+  border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
 }
 
+.cctv-footage:hover .cctv-label {
+  background: rgba(255, 255, 255, 0.8); 
+  color: #000;
+}
 
+/* Webcam Styling */
 .webcam-container {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  border: 2px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000; 
   border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.webcam-label {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  font-size: 14px;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.webcam-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  height: auto;
 }

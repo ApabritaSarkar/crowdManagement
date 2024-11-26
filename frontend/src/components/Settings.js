@@ -6,7 +6,7 @@ const Settings = () => {
   return (
     <div className="settings">
       <Sidebar />
-      <div className="bodyof3">
+      <div className="bodyof3-settings">
       <h1>This is settings page.</h1>
       </div>
     </div>
