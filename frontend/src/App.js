@@ -7,7 +7,7 @@ import ReportDiary from "./components/ReportDiary";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard";
 import Chat from "./components/Chat";
-import Settings from "./components/Settings";
+import Profile from "./components/Profile";
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/sidebar" element={<Sidebar />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/chat" element={<Chat />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/profile/:username" element={<Profile />} />
       </Routes>
     </Router>
   );

@@ -72,4 +72,26 @@ router.post('/login', async (req, res) => {
 });
 
 
+// Get Officer Profile by Username
+router.get('/officer/:username', async (req, res) => {
+  try {
+    const { username } = req.params;
+
+    // Fetch officer details by username
+    const officer = await Officer.findOne({ username: username.toLowerCase() });
+
+    if (!officer) {
+      return res.status(404).json({ message: 'Officer not found.' });
+    }
+
+    // Exclude sensitive data like password
+    const { password, ...officerData } = officer.toObject();
+
+    res.status(200).json({ message: 'Officer details fetched successfully.', officer: officerData });
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching officer details.', error: err.message });
+  }
+});
+
+
 module.exports = router;

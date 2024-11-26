@@ -13,10 +13,26 @@ const OfficerLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setMessage("Login successful!");
-      navigate("/dashboard");
-      } catch (error) {
-      setMessage(error.response?.data?.message || 'Error logging in');
+      const response = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {        
+        setMessage("Login successful!");
+        // Store the officer's username in localStorage
+        localStorage.setItem("username", data.officer.username);
+        navigate(`/profile/${data.officer.username}`); // Navigate to the profile page
+      } else {
+        setMessage(data.message || 'Error logging in');
+      }
+    } catch (error) {
+      setMessage('Error logging in');
     }
   };
 
