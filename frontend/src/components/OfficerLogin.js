@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-const OfficerLogin = () => {
+const OfficerLogin = ({ setUsername }) => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
