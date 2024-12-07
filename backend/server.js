@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const officerRoutes = require('./routes/officer');
+const Message = require("./models/Message"); // Import the Message model
 
 dotenv.config();
 const app = express();
@@ -50,14 +51,24 @@ io.on("connection", (socket) => {
     content: `${username} has joined the chat.`,
   });
 
-  // Handle incoming messages
-  socket.on("send-message", (data) => {
+  // Save messages and broadcast them
+  socket.on("send-message", async (data) => {
     if (!data.sender || !data.content) {
       console.error("Invalid message data:", data);
       return;
     }
-    console.log(`Message from ${data.sender}: ${data.content}`);
-    io.to("officer-chat-room").emit("message", data);
+
+    // Save message to database
+    try {
+      const message = new Message({ sender: data.sender, content: data.content });
+      await message.save();
+      console.log(`Message from ${data.sender}: ${data.content}`);
+
+      // Broadcast message to room
+      io.to("officer-chat-room").emit("message", data);
+    } catch (error) {
+      console.error("Error saving message:", error);
+    }
   });
 
   // Handle disconnection
@@ -65,6 +76,17 @@ io.on("connection", (socket) => {
     console.log(`Socket disconnected: ${socket.id} for user: ${username}`);
   });
 });
+
+app.get("/messages", async (req, res) => {
+  try {
+    const messages = await Message.find().sort({ timestamp: 1 }); // Fetch messages in chronological order
+    res.status(200).json(messages);
+  } catch (error) {
+    console.error("Error fetching messages:", error);
+    res.status(500).json({ message: "Error fetching messages" });
+  }
+});
+
 
 // Start Server
 const PORT = process.env.PORT || 5000;

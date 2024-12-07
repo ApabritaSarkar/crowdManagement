@@ -4,8 +4,8 @@ import { io } from "socket.io-client";
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
-  const username = localStorage.getItem("username"); // Fetch username from localStorage
-  const socketRef = useRef(null); // Use useRef for socket instance
+  const username = localStorage.getItem("username");
+  const socketRef = useRef(null);
 
   useEffect(() => {
     if (!username) {
@@ -13,45 +13,42 @@ const Chat = () => {
       return;
     }
 
-    // Initialize socket only if it doesn't already exist
-    if (!socketRef.current) {
-      socketRef.current = io("http://localhost:5000", {
-        query: { username }, // Send username as query parameter
-      });
+    // Fetch message history
+    const fetchMessages = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/messages");
+        const data = await response.json();
+        setMessages(data);
+      } catch (error) {
+        console.error("Error fetching messages:", error);
+      }
+    };
 
-      console.log(`${username} socket initialized`);
+    fetchMessages();
 
-      // Join the chat room
-      socketRef.current.emit("join-room", username);
+    // Initialize socket connection
+    socketRef.current = io("http://localhost:5000", { query: { username } });
 
-      // Listen for incoming messages
-      socketRef.current.on("message", (message) => {
-        setMessages((prevMessages) => [...prevMessages, message]);
-      });
+    // Join chat room
+    socketRef.current.emit("join-room", username);
 
-      // Handle disconnection
-      socketRef.current.on("disconnect", () => {
-        console.log(`${username} socket disconnected`);
-      });
-    }
+    // Listen for new messages
+    socketRef.current.on("message", (message) => {
+      setMessages((prevMessages) => [...prevMessages, message]);
+    });
 
-    // Cleanup on component unmount
     return () => {
       if (socketRef.current) {
         socketRef.current.disconnect();
-        console.log(`${username} socket cleaned up`);
-        socketRef.current = null;
+        console.log(`${username} socket disconnected`);
       }
     };
-  }, [username]); // Only reinitialize if username changes
+  }, [username]);
 
   const sendMessage = () => {
-    if (!newMessage.trim()) return; // Prevent sending empty messages
-    const messageData = {
-      sender: username,
-      content: newMessage,
-    };
-    socketRef.current.emit("send-message", messageData); // Use socket instance
+    if (!newMessage.trim()) return;
+    const messageData = { sender: username, content: newMessage };
+    socketRef.current.emit("send-message", messageData);
     setNewMessage("");
   };
 
