@@ -5,8 +5,16 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const { createServer } = require("http");
 const { Server } = require("socket.io");
-const officerRoutes = require('./routes/officer');
 const Message = require("./models/Message"); // Import the Message model
+
+// Import routes
+const officerRoutes = require('./routes/officer');
+const reportRoutes = require("./routes/reportRoutes");
+const caseRoutes = require('./routes/caseRoutes');
+const updateStatusRoutes = require("./routes/updateStatusRoutes");
+const policeDashboardRoutes = require("./routes/PoliceDashboardRoutes");
+const objectRoutes = require("./routes/objectRoutes");
+
 
 dotenv.config();
 const app = express();
@@ -22,8 +30,15 @@ const io = new Server(httpServer, {
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use("/uploads", express.static("uploads"));
+
 // Routes
 app.use('/api', officerRoutes);
+app.use("/api/dashboard", policeDashboardRoutes);
+app.use("/api/report", reportRoutes);
+app.use('/api/case', caseRoutes);
+app.use("/api/status", updateStatusRoutes);
+app.use("/api/object", objectRoutes);
 
 // MongoDB Connection
 mongoose

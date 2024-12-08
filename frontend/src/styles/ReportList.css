@@ -1,0 +1,34 @@
+.police-dashboard {
+    padding: 20px;
+  }
+  
+  .police-dashboard h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .case-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .case-table th, .case-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .realtime-updates {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .update-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
