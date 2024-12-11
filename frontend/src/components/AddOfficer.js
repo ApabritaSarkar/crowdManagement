@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { addOfficer } from '../api/officerService';
+import '../styles/AddOfficer.css';
+
 
 const AddOfficer = ({ refreshOfficers }) => {
   const [formData, setFormData] = useState({

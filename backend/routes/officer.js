@@ -1,5 +1,5 @@
 const express = require('express');
-const Officer = require('../models/Officer');
+const Officer = require('../models/OfficerDetail');
 const bcrypt = require('bcrypt');
 const router = express.Router();
 

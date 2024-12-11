@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/OfficerList.css';
 
 const OfficerList = ({ officers }) => {
   return (

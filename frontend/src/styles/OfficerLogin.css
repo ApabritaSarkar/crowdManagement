@@ -1,0 +1,161 @@
+.officer-login {
+  font-family: Arial, sans-serif;
+  background-color: #e6f0fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    gap: 70px;
+  }
+  .officer-login form
+  {
+    background-color: #ffffff;
+    padding: 40px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .officer-login h1 {
+    font-size: 1.8rem;
+    color: #003366;
+    margin-bottom: 20px;
+  }
+  
+  .officer-login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .officer-login input {
+    width: 330px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .officer-login button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 150px;
+  }
+  
+  .officer-login button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .officer-login button:focus {
+    outline: none;
+  }
+  
+  .officer-login p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .officer-login p.error {
+    color: red;
+  }
+  
+  .officer-login p.success {
+    color: green;
+  }
+  
+
+  @media (max-width: 768px) {
+    .officer-login {
+      padding: 15px;
+      gap: 50px;
+    }
+  
+    .officer-login form {
+      width: 90%;
+      padding: 30px;
+      height: auto;
+      box-shadow: none;
+    }
+  
+    .officer-login h1 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+  
+    .officer-login input {
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .officer-login button {
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .officer-login {
+      font-family: Arial, sans-serif;
+      background-color: #e6f0fa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        padding: 20px;
+        margin: auto;
+        gap: 70px;
+    }
+  
+    .officer-login form {
+      background-color: #ffffff;
+    padding: 40px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    }
+  
+    .officer-login h1 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+  
+    .officer-login input {
+      width: 100%;
+      font-size: 0.8rem;
+      padding: 6px;
+    }
+  
+    .officer-login button {
+      width: 100%;
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  }
+  
+  

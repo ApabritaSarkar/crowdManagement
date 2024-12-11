@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import AddOfficer from "./AddOfficer";
 import OfficerList from "./OfficerList";
 import { getOfficers } from "../api/officerService";
+import '../styles/Admin.css';
+
 
 const Admin = () => {
   const [officers, setOfficers] = useState([]);

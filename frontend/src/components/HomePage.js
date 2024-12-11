@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '../styles/HomePage.css';
 
 const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,98 +25,46 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <div className="homepage-container">
       <h1>Welcome to the Police Management System</h1>
       {/* Admin Button */}
       <div>
-        <button
-          onClick={handleAdminClick}
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#ffc107",
-            color: "black",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
+        <button className="admin-button" onClick={handleAdminClick}>
           Admin
         </button>
       </div>
       {/* Password Modal */}
       {isModalOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "white",
-              padding: "20px",
-              borderRadius: "10px",
-              boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-              textAlign: "center",
-            }}
-          >
+        <div className="modal-overlay">
+          <div className="modal-content">
             <h3>Enter Admin Password</h3>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
-              style={{
-                width: "100%",
-                padding: "10px",
-                margin: "10px 0",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-              }}
+              className="password-input"
             />
-            <button
-              onClick={handlePasswordSubmit}
-              style={{
-                padding: "10px 20px",
-                backgroundColor: "#28a745",
-                color: "white",
-                border: "none",
-                borderRadius: "5px",
-                cursor: "pointer",
-                marginRight: "10px",
-              }}
-            >
-              Submit
-            </button>
-            <button
-              onClick={() => setIsModalOpen(false)}
-              style={{
-                padding: "10px 20px",
-                backgroundColor: "#dc3545",
-                color: "white",
-                border: "none",
-                borderRadius: "5px",
-                cursor: "pointer",
-              }}
-            >
-              Cancel
-            </button>
-            {errorMessage && (
-              <p style={{ color: "red", marginTop: "10px" }}>{errorMessage}</p>
-            )}
+            <div className="modal-buttons">
+              <button className="submit-button" onClick={handlePasswordSubmit}>
+                Submit
+              </button>
+              <button
+                className="cancel-button"
+                onClick={() => setIsModalOpen(false)}
+              >
+                Cancel
+              </button>
+            </div>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>
         </div>
       )}
-      <button onClick={() => navigate("/officer-login")}>Officer Login</button>
-      <button onClick={() => navigate("/report-person")}>Report person</button>
-      <button onClick={() => navigate("/report-object")}>Report object</button>
+      <div className="homepage-buttons">
+        <button onClick={() => navigate("/officer-login")}>Officer Login</button>
+        <button onClick={() => navigate("/report-person")}>Report person</button>
+        <button onClick={() => navigate("/report-object")}>Report object</button>
+      </div>
     </div>
   );
 };

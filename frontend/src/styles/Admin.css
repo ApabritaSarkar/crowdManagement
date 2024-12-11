@@ -1,0 +1,48 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+.admin-dashboard {
+  font-family: Arial, sans-serif;
+  background-color: #e6f0fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+  }
+  
+  .admin-dashboard h1 {
+    font-size: 2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-dashboard h2 {
+    font-size: 1.5rem;
+    color: #0056b3;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* .admin-dashboard .add-officer-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  } */
+  
+  .admin-dashboard .add-officer-section h2 {
+    font-size: 1.5rem;
+    color: #0056b3;
+   margin-bottom: 20px;
+  }
+  

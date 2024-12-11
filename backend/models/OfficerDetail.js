@@ -9,6 +9,7 @@ const officerSchema = new mongoose.Schema({
   area: { type: String, required: true },
   username: { type: String, required: true },
   password: { type: String, required: true },
+  // photoPath: String, // Path to the uploaded photo
 });
 
 // Hash password before saving
@@ -27,4 +28,4 @@ officerSchema.pre('save', function (next) {
     next();
 });
 
-module.exports = mongoose.model('Officer', officerSchema);
+module.exports = mongoose.model('OfficerDetail', officerSchema);

@@ -16,6 +16,7 @@ const Sidebar = () => {
         {/* Navigate dynamically to the profile page */}
         <li onClick={() => navigate(`/profile/${username}`)}>Profile</li>
         <li onClick={() => navigate("/chat")}>Chat</li>
+        <li onClick={() => navigate("/reportList")}>Report List</li>
       </ul>
     </div>
   );
