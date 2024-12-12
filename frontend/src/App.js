@@ -9,9 +9,9 @@ import ReportObject from "./components/ReportObject";
 import CaseTable from "./components/CaseTable";
 import CaseDetailsPage from "./components/CaseDetailsPage";
 import ObjectDetailsPage from "./components/ObjectDetailsPage"; // Adjust path if necessary
+import ObjectDashboard from "./components/ObjectDashboard";
 import TrackingPage from './components/TrackingPage';
 import ReportList from "./components/ReportList";
-
 
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard";
@@ -36,7 +36,7 @@ const App = () => {
         <Route path="/object/:id" element={<ObjectDetailsPage />} />
         <Route path="/track/:caseId" element={<TrackingPage />} />
         <Route path="/reportList" element={<ReportList />} />
-
+        <Route path="/object-dashboard" element={<ObjectDashboard />} />
 
         <Route path="/sidebar" element={<Sidebar />} />
         <Route path="/dashboard" element={<Dashboard />} />

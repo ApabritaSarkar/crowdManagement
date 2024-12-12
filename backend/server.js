@@ -14,6 +14,7 @@ const caseRoutes = require('./routes/caseRoutes');
 const updateStatusRoutes = require("./routes/updateStatusRoutes");
 const policeDashboardRoutes = require("./routes/PoliceDashboardRoutes");
 const objectRoutes = require("./routes/objectRoutes");
+const objectDashboardRoutes = require("./routes/objectDashboardRoutes");
 
 
 dotenv.config();
@@ -39,6 +40,7 @@ app.use("/api/report", reportRoutes);
 app.use('/api/case', caseRoutes);
 app.use("/api/status", updateStatusRoutes);
 app.use("/api/object", objectRoutes);
+app.use("/api/object-dashboard", objectDashboardRoutes);
 
 // MongoDB Connection
 mongoose
