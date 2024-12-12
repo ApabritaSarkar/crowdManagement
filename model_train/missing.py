@@ -138,20 +138,24 @@
 
 
 
+
 from flask import Flask, request, jsonify, Response
 import face_recognition
 import cv2
 import numpy as np
 import json
 import os
+from flask_cors import CORS
 
+# Initialize Flask app and enable CORS
 app = Flask(__name__)
+CORS(app)
 
 # Paths and database setup
 database_file = "registered_features.json"
 uploads_folder = "uploads"
-persons_folder = f"{uploads_folder}/missing_persons_image"
-objects_folder = f"{uploads_folder}/missing_objects_image"
+persons_folder = os.path.join(uploads_folder, "missing_persons_image")
+objects_folder = os.path.join(uploads_folder, "missing_objects_image")
 
 os.makedirs(persons_folder, exist_ok=True)
 os.makedirs(objects_folder, exist_ok=True)
@@ -218,18 +222,27 @@ def live_feed():
     def generate():
         cap = cv2.VideoCapture(0)
         if not cap.isOpened():
-            return jsonify({"error": "Cannot open camera."}), 500
+            yield jsonify({"error": "Cannot open camera."})
+            return
+
         while True:
             ret, frame = cap.read()
             if not ret:
                 break
+
             match_face(frame)
             match_object(frame)
+
             _, buffer = cv2.imencode(".jpg", frame)
             yield (b"--frame\r\nContent-Type: image/jpeg\r\n\r\n" + buffer.tobytes() + b"\r\n")
+
         cap.release()
 
     return Response(generate(), mimetype="multipart/x-mixed-replace; boundary=frame")
+
+@app.route('/stop_live_feed', methods=['POST'])
+def stop_live_feed():
+    return jsonify({"message": "Live feed stopped successfully."})
 
 # Match faces in the live feed
 def match_face(frame):
@@ -263,4 +276,4 @@ def match_object(frame):
                 cv2.putText(frame, name, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
 if __name__ == "__main__":
-    app.run(port=5001)
+    app.run(port=5001, debug=True)
