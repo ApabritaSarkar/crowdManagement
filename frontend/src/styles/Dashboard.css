@@ -106,6 +106,36 @@ html, body {
 
 /* 
  */
+ .cctv-footage {
+  position: relative;
+  background: #f5f5f5; /* Optional background color */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 300px; /* Fixed height for each footage container */
+}
+
+/* Style for the CCTV video */
+.cctv-video {
+  width: 100%; /* Make video fit the width of the container */
+  height: 100%; /* Make video fit the height of the container */
+  object-fit: cover; /* Ensures the video covers the container without distortion */
+  border-radius: 8px;
+}
+
+/* Styling for the label below each video */
+.cctv-label {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
 
 
 

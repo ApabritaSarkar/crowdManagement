@@ -67,7 +67,7 @@ def index():
 def gen_frames(video_source=0):
     """
     Generate frames from the video source (live webcam or video file).
-    Args:
+    Args:    
         video_source (int or str): Webcam index or video file path.
     Yields:
         bytes: Encoded frame bytes.

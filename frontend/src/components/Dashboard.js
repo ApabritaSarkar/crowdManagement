@@ -88,10 +88,10 @@ const Dashboard = () => {
         <div className="cctv-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px' }}>
           {/* Fire Detection Feed */}
           <div className="cctv-footage">
-            <h3>Fire Detection</h3>
+            <h3>Heatmap</h3>
             <img
               src="http://localhost:5005/video_feed" // Fire detection video feed
-              alt="Fire Detection Feed"
+              alt="heat map"
               className="cctv-video"
               style={{ width: '100%', border: '2px solid red' }}
             />
@@ -103,7 +103,7 @@ const Dashboard = () => {
             <h3>Fire Detection</h3>
             <img
               src="http://localhost:5001/video_feed" // Crowd gathering video feed
-              alt="Crowd Gathering Feed"
+              alt="fire detection"
               className="cctv-video"
               style={{ width: '100%', border: '2px solid blue' }}
             />
@@ -115,7 +115,7 @@ const Dashboard = () => {
             <h3>Gathering Detection</h3>
             <img
               src="http://localhost:5002/video_feed" // Object detection video feed
-              alt="Object Detection Feed"
+              alt="gathering detection"
               className="cctv-video"
               style={{ width: '100%', border: '2px solid green' }}
             />
