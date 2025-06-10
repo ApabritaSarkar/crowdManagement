@@ -33,15 +33,7 @@ const CaseTable = ({ cases }) => {
             <td>
               <button
                 onClick={() => navigate(`/case-details/${caseItem._id}`)}
-                style={{
-                  backgroundColor: "green",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "3px",
-                  padding: "5px 8px",
-                  fontSize: "12px",
-                  cursor: "pointer",
-                }}
+                className="w-full bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 View Details
               </button>

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../styles/ReportMissingForm.css";
+
 
 const ReportPerson = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +18,7 @@ const ReportPerson = () => {
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
   const [caseId, setCaseId] = useState(null); // Store the submitted case ID
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -29,6 +30,7 @@ const ReportPerson = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     const data = new FormData();
     Object.keys(formData).forEach((key) => {
