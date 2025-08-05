@@ -1,25 +1,29 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Guard Rail",
+  "name": "Guard Rail - Crowd Management System",
+  "description": "AI-powered crowd management system with real-time detection and monitoring",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "guard-rail-icon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "guard-rail-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "guard-rail-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#1f2937",
+  "background_color": "#111827",
+  "orientation": "portrait-primary",
+  "categories": ["security", "utilities", "productivity"],
+  "lang": "en"
 }

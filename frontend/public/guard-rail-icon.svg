@@ -1,0 +1,70 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with Gradient -->
+  <defs>
+    <radialGradient id="bgGradient" cx="0.5" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </radialGradient>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="248" fill="url(#bgGradient)" stroke="#334155" stroke-width="4"/>
+  
+  <!-- Modern Shield -->
+  <path d="M256 70 L170 110 L170 260 Q170 310 256 390 Q342 310 342 260 L342 110 Z" fill="url(#shieldGradient)" stroke="#0e7490" stroke-width="2"/>
+  
+  <!-- Tech Grid Pattern -->
+  <g opacity="0.3">
+    <line x1="200" y1="140" x2="312" y2="140" stroke="#67e8f9" stroke-width="1"/>
+    <line x1="200" y1="170" x2="312" y2="170" stroke="#67e8f9" stroke-width="1"/>
+    <line x1="200" y1="200" x2="312" y2="200" stroke="#67e8f9" stroke-width="1"/>
+    <line x1="220" y1="120" x2="220" y2="280" stroke="#67e8f9" stroke-width="1"/>
+    <line x1="256" y1="120" x2="256" y2="280" stroke="#67e8f9" stroke-width="1"/>
+    <line x1="292" y1="120" x2="292" y2="280" stroke="#67e8f9" stroke-width="1"/>
+  </g>
+  
+  <!-- AI Camera/Eye -->
+  <rect x="230" y="130" width="52" height="30" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+  <circle cx="256" cy="145" r="12" fill="#38bdf8"/>
+  <circle cx="256" cy="145" r="6" fill="#0f172a"/>
+  <circle cx="258" cy="143" r="2" fill="#67e8f9"/>
+  
+  <!-- Scanning Lines -->
+  <g opacity="0.8">
+    <path d="M240 145 L220 135 M272 145 L292 135" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+    <path d="M240 145 L220 155 M272 145 L292 155" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Crowd Icons (Modern) -->
+  <!-- Person 1 -->
+  <circle cx="220" cy="200" r="8" fill="#e2e8f0"/>
+  <rect x="216" y="208" width="8" height="16" rx="2" fill="#e2e8f0"/>
+  
+  <!-- Person 2 -->
+  <circle cx="240" cy="190" r="8" fill="#f1f5f9"/>
+  <rect x="236" y="198" width="8" height="16" rx="2" fill="#f1f5f9"/>
+  
+  <!-- Person 3 -->
+  <circle cx="256" cy="195" r="8" fill="#ffffff"/>
+  <rect x="252" y="203" width="8" height="16" rx="2" fill="#ffffff"/>
+  
+  <!-- Person 4 -->
+  <circle cx="272" cy="190" r="8" fill="#f1f5f9"/>
+  <rect x="268" y="198" width="8" height="16" rx="2" fill="#f1f5f9"/>
+  
+  <!-- Person 5 -->
+  <circle cx="292" cy="200" r="8" fill="#e2e8f0"/>
+  <rect x="288" y="208" width="8" height="16" rx="2" fill="#e2e8f0"/>
+  
+  <!-- Detection Wave -->
+  <ellipse cx="256" cy="180" rx="60" ry="8" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.6"/>
+  <ellipse cx="256" cy="180" rx="80" ry="12" fill="none" stroke="#0891b2" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Status Indicator -->
+  <circle cx="300" cy="120" r="8" fill="#10b981"/>
+  <circle cx="300" cy="120" r="4" fill="#34d399" opacity="0.8"/>
+</svg>
