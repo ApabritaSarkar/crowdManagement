@@ -1,0 +1,170 @@
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Form Container */
+form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px 25px; /* Adjusted padding-right */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+form:hover {
+  transform: scale(1.01); /* Slight zoom effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Heading */
+form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Input Fields and Textarea */
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="file"],
+button {
+  display: block;
+  width: calc(100% - 20px); /* Added calculation to balance padding-right */
+  margin-bottom: 20px; /* Consistent spacing between fields */
+  padding: 12px;
+  font-size: 16px;
+  margin-right: auto; /* Ensures alignment on smaller screens */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  outline: none;
+}
+
+/* Textarea Specific Styling */
+textarea {
+  resize: none;
+  height: 120px;
+  padding: 12px;
+}
+
+/* File Input Styling */
+input[type="file"] {
+  border: none;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Submit Button */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-right: auto; /* Ensures button aligns with form */
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:active {
+  background-color: #003d80;
+  transform: translateY(0); /* Reset lift effect */
+}
+
+/* Success and Error Messages */
+.success,
+.error {
+  padding: 12px; /* Adjusted for consistent spacing */
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Success and Error Messages Centered */
+.success-message,
+.error-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 15px; /* Uniform padding */
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    padding: 20px 15px; /* Reduced right-side padding for smaller screens */
+  }
+
+  form h2 {
+    font-size: 20px;
+  }
+
+  /* button {
+    font-size: 16px;
+    padding: 12px;
+  } */
+}

@@ -1,0 +1,74 @@
+/* General Styling */
+.tracking-page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Title Styling */
+  .tracking-title {
+    text-align: center;
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Info Card */
+  .tracking-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    background-color: #fafafa;
+  }
+  
+  /* Image Section */
+  .tracking-image-container {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .tracking-image {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Details Section */
+  .tracking-info {
+    flex: 2;
+    min-width: 300px;
+  }
+  
+  .tracking-info p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555555;
+  }
+  
+  .tracking-info p strong {
+    color: #333333;
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .tracking-card {
+      flex-direction: column;
+    }
+  
+    .tracking-image-container {
+      max-width: 100%;
+    }
+  }
+  

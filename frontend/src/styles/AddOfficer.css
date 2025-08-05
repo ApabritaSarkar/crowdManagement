@@ -1,0 +1,101 @@
+.add-officer-form form {
+  
+    padding: 20px;
+  
+  
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 700px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    
+  }
+  .add-officer-form
+  {
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  
+  .add-officer-form input {
+    width: 500px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .add-officer-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 300px;
+  }
+  
+  .add-officer-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .add-officer-form button:focus {
+    outline: none;
+  }
+  @media (max-width: 768px) {
+    .add-officer-form {
+      width: 90%;
+      padding: 15px;
+      box-shadow: none;
+    }
+  
+    .add-officer-form form {
+      width: 100%;
+    }
+  
+    .add-officer-form input {
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .add-officer-form button {
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .add-officer-form {
+      width: 350px;
+      padding: 10px;
+    }
+  
+    .add-officer-form form {
+      width: 100%;
+    }
+  
+    .add-officer-form input {
+      width: 100%;
+      font-size: 0.8rem;
+      padding: 6px;
+    }
+  
+    .add-officer-form button {
+      width: 100%;
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  }
+  

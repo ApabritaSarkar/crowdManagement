@@ -1,0 +1,79 @@
+.officer-list-table {
+   width:1000px;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+    margin: 20px auto;
+   
+  }
+  
+  .officer-list-table th,
+  .officer-list-table td {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  .officer-list-table th {
+    background-color: #ffffff;
+    color: #003366;
+    font-weight: bold;
+
+  }
+  
+  .officer-list-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .officer-list-table tr:hover {
+    background-color: #e2e2e2;
+  }
+  @media (max-width: 768px) {
+    .officer-list-table {
+      width: 100%;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+  
+    .officer-list-table th,
+    .officer-list-table td {
+      padding: 6px;
+    }
+  
+    .officer-list-table th {
+      font-size: 14px;
+    }
+  
+    .officer-list-table td {
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .officer-list-table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      box-shadow: none;
+      margin: 10px 0;
+      border: none;
+    }
+  
+    .officer-list-table th,
+    .officer-list-table td {
+      font-size: 12px;
+      padding: 5px;
+    }
+  
+    .officer-list-table th {
+      text-align: left;
+    }
+  
+    .officer-list-table td {
+      text-align: left;
+    }
+  }
+  
+  
