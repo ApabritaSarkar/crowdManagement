@@ -22,3 +22,10 @@ Thumbs.db
 # Build output (if applicable)
 dist/
 build/
+
+/backend/node_modules/
+/backend/.env
+/model_train/uploads/
+/uploads/
+*.mp4
+*.pt
